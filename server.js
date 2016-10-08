@@ -16,8 +16,12 @@ var session      = require('express-session');
 var configDB = require('./config/database.js');
 
 // configuration ===============================================================
+if (process.env.MONGODB_URI) {
+	mongoose.connect(process.env.MONGODB_URI)
+} else {
 mongoose.connect(configDB.url); // connect to our database
 
+}
 require('./config/passport')(passport); // pass passport for configuration
 
 // set up our express application
