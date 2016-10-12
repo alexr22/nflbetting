@@ -15,7 +15,7 @@ var session      = require('express-session');
 
 var configDB = require('./config/database.js');
 
-var MONGODB_URI = 'mongodb://heroku_sk5slvnd:lklim5lbemc7pm1se7cqt8dji6@ds053156.mlab.com:53156/heroku_sk5slvnd';
+//var MONGODB_URI = 'mongodb://heroku_sk5slvnd:lklim5lbemc7pm1se7cqt8dji6@ds053156.mlab.com:53156/heroku_sk5slvnd';
 // configuration ===============================================================
 if (process.env.MONGODB_URI) {
 	mongoose.connect(process.env.MONGODB_URI)

@@ -77,19 +77,13 @@ module.exports = function(app, passport) {
     })
     //route to link the bet to the user
     app.post('/placeBet', function(req, res) {
-        console.log("fefefe");
-        User.update({
-        
-            $set: {
-                '_betId': req.bet._id
-            }
-        }, function(err, edited) {
-            if (err) {
-                console.log(err)
-            } else {
-                console.log(edited)
-            }
-        })
+        console.log(req.body);
+        User.findOneAndUpdate(
+            {_id: "57fdc6d74c17b05d52b39dbf"},
+             {balance: 1000-req.body.amount},
+             callback
+
+        )
     })
 
 
